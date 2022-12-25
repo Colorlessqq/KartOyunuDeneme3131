@@ -307,6 +307,7 @@ MonoBehaviour:
   myDeck:
   - {fileID: 969988379895471088, guid: 0e8326c6f219f5446b247f252859da5d, type: 3}
   - {fileID: 4274941421475744872, guid: b55f8ac4a60c1b84889aa7d333adaf6a, type: 3}
+  - {fileID: 969988379895471088, guid: afe18e9c77c9a6446929ec0d99ff6411, type: 3}
   spawnLine: {fileID: 974926928}
 --- !u!136 &14417079
 CapsuleCollider:
@@ -539,6 +540,7 @@ MonoBehaviour:
   myDeck:
   - {fileID: 969988379895471088, guid: 0e8326c6f219f5446b247f252859da5d, type: 3}
   - {fileID: 4274941421475744872, guid: b55f8ac4a60c1b84889aa7d333adaf6a, type: 3}
+  - {fileID: 969988379895471088, guid: afe18e9c77c9a6446929ec0d99ff6411, type: 3}
   spawnLine: {fileID: 787710509}
 --- !u!136 &210437463
 CapsuleCollider:
@@ -865,7 +867,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 71.33417, y: -345}
+  m_AnchoredPosition: {x: 71.33417, y: -339}
   m_SizeDelta: {x: 1250, y: 250}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &359219809
