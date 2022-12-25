@@ -11,7 +11,7 @@ public class Deste : MonoBehaviour
 
     public void ReturnCardToHand()
     {
-        int x = Random.Range(0, 2);
+        int x = Random.Range(0, 3);
         GameObject newCard = Instantiate(myDeck[x]);
         newCard.tag = "Player";
         newCard.transform.SetParent(spawnLine.transform);
@@ -19,7 +19,8 @@ public class Deste : MonoBehaviour
     }
     public void ReturnCardToEnemeyHand()
     {
-        GameObject newCard = Instantiate(myDeck[0]);
+        int x = Random.Range(0, 3);
+        GameObject newCard = Instantiate(myDeck[x]);
         newCard.transform.SetParent(spawnLine.transform);
         newCard.tag = "Enemy";
 

@@ -564,3 +564,4 @@ MonoBehaviour:
   health: {fileID: 4367853293176866165}
   attack: {fileID: 3836284140065097921}
   cost: {fileID: 558005003110324792}
+  image: {fileID: 2742488385641434646}

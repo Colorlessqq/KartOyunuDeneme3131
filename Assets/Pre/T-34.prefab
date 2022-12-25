@@ -363,6 +363,7 @@ MonoBehaviour:
   health: {fileID: 969988379072264713}
   attack: {fileID: 969988379907426828}
   cost: {fileID: 969988379283319184}
+  image: {fileID: 2543934778217609995}
 --- !u!1 &969988379907426826
 GameObject:
   m_ObjectHideFlags: 0

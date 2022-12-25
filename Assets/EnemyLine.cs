@@ -1,18 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
-public class EnemyLine : MonoBehaviour
+public class EnemyLine : MonoBehaviour, IDropHandler
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField]
+    TextMeshProUGUI text;
+    public void OnDrop(PointerEventData eventData)
     {
+        text.text = "hello";
         
+
+
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
