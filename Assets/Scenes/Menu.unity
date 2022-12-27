@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028352, g: 0.22571376, b: 0.30692244, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 411097131}
   - component: {fileID: 411097130}
   m_Layer: 5
-  m_Name: Button
+  m_Name: "OyunaBa\u015Fla Butonu"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -158,10 +158,10 @@ RectTransform:
   m_Father: {fileID: 1178900284}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -586.1819, y: 262.3792}
-  m_SizeDelta: {x: 282.3257, y: 115.7482}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 985, y: 255}
+  m_SizeDelta: {x: 400.32568, y: 125.74817}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &411097130
 MonoBehaviour:
@@ -206,7 +206,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 411097131}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1178900285}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: startButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &411097131
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,8 +239,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 0b3a982092636d347b170726a4dcbdf2, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -379,7 +391,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\xC7\u0131k\u0131\u015F"
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -406,7 +418,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 72
+  m_fontSize: 24
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -469,7 +481,7 @@ GameObject:
   - component: {fileID: 592609661}
   - component: {fileID: 592609660}
   m_Layer: 5
-  m_Name: Button (3)
+  m_Name: "\xC7\u0131k\u0131\u015F Butonu"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -493,8 +505,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -586.1819, y: -162}
-  m_SizeDelta: {x: 282.3257, y: 115.7482}
+  m_AnchoredPosition: {x: 25, y: -169.37921}
+  m_SizeDelta: {x: 400.3257, y: 125.7482}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &592609660
 MonoBehaviour:
@@ -539,7 +551,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 592609661}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1178900285}
+        m_TargetAssemblyTypeName: MenuManager, Assembly-CSharp
+        m_MethodName: quit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &592609661
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -560,8 +584,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 8d7fa51716277a1458af72a430ff25b4, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -591,7 +615,7 @@ GameObject:
   - component: {fileID: 689274274}
   - component: {fileID: 689274273}
   m_Layer: 5
-  m_Name: Button (2)
+  m_Name: "Kartlar\u0131m\u0131D\xFCzenle Butonu"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -615,8 +639,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -586.1819, y: -23}
-  m_SizeDelta: {x: 282.3257, y: 115.7482}
+  m_AnchoredPosition: {x: 25, y: -30.379211}
+  m_SizeDelta: {x: 400.3257, y: 125.7482}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &689274273
 MonoBehaviour:
@@ -682,8 +706,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: b3bc1f8b4069d6d4d9a53c8e3253399a, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -758,7 +782,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Nas\u0131l Oynar\u0131r ?"
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -785,7 +809,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 51.05
+  m_fontSize: 24
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -941,8 +965,9 @@ GameObject:
   - component: {fileID: 1178900283}
   - component: {fileID: 1178900282}
   - component: {fileID: 1178900281}
+  - component: {fileID: 1178900285}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: Menu Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1034,6 +1059,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1178900285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1178900280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4334d79dffab59542868a921b9fe7902, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1318071514
 GameObject:
   m_ObjectHideFlags: 0
@@ -1131,7 +1168,7 @@ GameObject:
   - component: {fileID: 1476061057}
   - component: {fileID: 1476061056}
   m_Layer: 5
-  m_Name: Button (1)
+  m_Name: "Nas\u0131lOynan\u0131r Butonu"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1155,8 +1192,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -586.1819, y: 117}
-  m_SizeDelta: {x: 282.3257, y: 115.7482}
+  m_AnchoredPosition: {x: 25, y: 109.62079}
+  m_SizeDelta: {x: 400.3257, y: 125.7482}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1476061056
 MonoBehaviour:
@@ -1222,8 +1259,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 3aa548740103807409891ad2f051da45, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -1366,7 +1403,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Kartlar\u0131m\u0131 D\xFCzenle"
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1393,7 +1430,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 51.05
+  m_fontSize: 24
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -1501,7 +1538,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Oyuna Ba\u015Fla"
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1528,7 +1565,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 51.05
+  m_fontSize: 57.4
   m_fontSizeBase: 57.4
   m_fontWeight: 400
   m_enableAutoSizing: 1
