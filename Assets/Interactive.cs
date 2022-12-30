@@ -12,15 +12,25 @@ public class Interactive : MonoBehaviour, IDropHandler,IPointerEnterHandler,IPoi
     // Start is called before the first frame update
     [SerializeField] TextMeshProUGUI health;
     [SerializeField] TextMeshProUGUI attack;
-    [SerializeField] TextMeshProUGUI cost;
+    [SerializeField] public TextMeshProUGUI cost;
+    [SerializeField] TextMeshProUGUI ammunation;
     [SerializeField] Image image;
+    [SerializeField] string range;
+    public bool isPlayed = false;
+    StateManager stateManager;
     public void OnDrop(PointerEventData eventData)
     {
+
+        // Eğer tur senin değilse sonlandır
+        if (!stateManager.isPlayerTurn) { return; }
+
         Interactive dropeed = eventData.pointerDrag.gameObject.GetComponent<Interactive>();
-        if (dropeed.tag != this.tag)
+        if (dropeed.tag != this.tag && dropeed.isPlayed && isPlayed)
         {
+
             TextMeshProUGUI damage = dropeed.attack;
             health.text = (int.Parse(health.text) - int.Parse(damage.text)).ToString();
+            stateManager.Attack(dropeed);
 
             if (int.Parse(health.text) < 1)
             {
@@ -39,15 +49,16 @@ public class Interactive : MonoBehaviour, IDropHandler,IPointerEnterHandler,IPoi
     [System.Obsolete]
     public void OnPointerEnter(PointerEventData eventData)
     {
-
+        // Eğer tur senin değilse sonlandır
+        if (!stateManager.isPlayerTurn) { return; }
 
         try
         {
-            if (eventData.pointerDrag.gameObject.tag == this.tag)
+            if (eventData.pointerDrag.gameObject.tag == this.tag && isPlayed)
             {
                 image.color = Color.gray;
             }
-            else if (eventData.pointerDrag.gameObject.tag != this.tag)
+            else if (eventData.pointerDrag.gameObject.tag != this.tag && isPlayed)
             {
                 image.color = Color.red;
             }
@@ -62,17 +73,15 @@ public class Interactive : MonoBehaviour, IDropHandler,IPointerEnterHandler,IPoi
 
     public void OnPointerExit(PointerEventData eventData)
     {
+        // Eğer tur senin değilse sonlandır
+        if (!stateManager.isPlayerTurn) { return; }
         image.color = Color.white;
     }
 
     void Start()
     {
-     
+        stateManager = FindObjectOfType<StateManager>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }

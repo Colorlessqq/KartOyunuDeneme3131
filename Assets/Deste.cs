@@ -1,28 +1,56 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class Deste : MonoBehaviour
 {
+    bool isEnemyDeck;
     [SerializeField]
-    public GameObject[] myDeck;
+    List<GameObject> myDeck;
     [SerializeField]
-    private GameObject spawnLine;  
+    private GameObject spawnLine;
+    StateManager stateManager;
 
     public void ReturnCardToHand()
     {
-        int x = Random.Range(0, 3);
+
+        // Eğer tur senin değilse sonlandır
+        if (!stateManager.isPlayerTurn) { return; }
+        int x = Random.Range(0, myDeck.Count);
         GameObject newCard = Instantiate(myDeck[x]);
+        myDeck.RemoveAt(x);
         newCard.tag = "Player";
         newCard.transform.SetParent(spawnLine.transform);
 
     }
     public void ReturnCardToEnemeyHand()
     {
-        int x = Random.Range(0, 3);
+
+        int x = Random.Range(0, myDeck.Count);
         GameObject newCard = Instantiate(myDeck[x]);
+        myDeck.RemoveAt(x);
         newCard.transform.SetParent(spawnLine.transform);
         newCard.tag = "Enemy";
+
+    }
+    private void Start()
+    {
+
+        stateManager = FindObjectOfType<StateManager>();
+        for (int i = 0; i < 4; i++)
+        {
+            int x = Random.Range(0, myDeck.Count);
+            GameObject newCard = Instantiate(myDeck[x]);
+            myDeck.RemoveAt(x);
+            if (isEnemyDeck) { newCard.tag = "Enemy"; }
+            else
+            {
+                newCard.tag = "Player";
+            }
+            newCard.transform.SetParent(spawnLine.transform);
+        }
 
     }
 

@@ -8,11 +8,12 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 
 
     public GameObject firstParent;
-    int maxCard = 4;
+    int maxCard = 3;
     public void OnDrop(PointerEventData eventData)
     {
         print(eventData.pointerDrag.name + "OnDrag Zone: " + gameObject.name);
 
+        if (this.gameObject.transform.childCount >= maxCard ) { print("maxium card"); return; }
         Draggable d = eventData.pointerDrag.GetComponent<Draggable>();
         d.original_parent = this.transform;
         
