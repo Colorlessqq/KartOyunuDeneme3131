@@ -17,8 +17,8 @@ public class EnemyLine : MonoBehaviour, IDropHandler
         inter.isPlayed = true;
         Draggable d = eventData.pointerDrag.GetComponent<Draggable>();
         d.original_parent = this.transform;
-
-
+        inter.CardLine = -1;
+        
     }
 
 }

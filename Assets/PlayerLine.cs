@@ -29,17 +29,17 @@ public class PlayerLine : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPo
         //Kartın ücretinin oynamasına engel olup olmadığını kontrol eder
         if (inter.isPlayed == false)
         {
-            stateManager.PlayCard(inter);
+            if (!stateManager.PlayCard(inter)) { return; }
         }
         // Kartın cephane ücreti ödenir
         else 
         {
-            ammunation.text = (int.Parse(ammunation.text) - int.Parse(inter.cost.text)).ToString();
+            if (!stateManager.MoveCard(inter)) { return; } 
         }
-
         //Eğer aynı hizade kalmışsın bir şey yapma
 
         //Her şey doğru ise kartın yerini değiştirir
+        inter.CardLine = -1;
         d.original_parent = this.transform;
 
 

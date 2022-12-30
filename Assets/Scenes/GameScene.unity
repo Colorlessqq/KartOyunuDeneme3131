@@ -538,7 +538,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.11372549}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -849,7 +849,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.11372549}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -888,6 +888,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerLine1: {fileID: 359219808}
   playerLine2: {fileID: 2091297374}
+  ammunation: {fileID: 0}
 --- !u!1 &349079112
 GameObject:
   m_ObjectHideFlags: 0
@@ -1101,7 +1102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.11372549}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1229,6 +1230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b193321645d8b5045abe3402b56de3fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isEnemyDeck: 0
   myDeck:
   - {fileID: 969988379895471088, guid: 0d7f409ad76241d42a575813e72f5f51, type: 3}
   - {fileID: 969988379895471088, guid: e712d69fadb59c24f8a14246f2eb2291, type: 3}
@@ -1506,7 +1508,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.11372549}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1933,7 +1935,7 @@ MonoBehaviour:
   cost: {fileID: 0}
   ammunation: {fileID: 0}
   image: {fileID: 690973198}
-  range: 
+  range: 0
   isPlayed: 1
 --- !u!114 &690973198
 MonoBehaviour:
@@ -2313,7 +2315,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.11372549}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2978,7 +2980,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.11372549}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3206,6 +3208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b193321645d8b5045abe3402b56de3fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isEnemyDeck: 1
   myDeck:
   - {fileID: 969988379895471088, guid: 250a74fd7c0989c4780f483495d814d0, type: 3}
   - {fileID: 969988379895471088, guid: 7c02278a434bb3147804b0fafce83331, type: 3}
@@ -4513,7 +4516,7 @@ MonoBehaviour:
   cost: {fileID: 0}
   ammunation: {fileID: 0}
   image: {fileID: 1767486368}
-  range: 
+  range: 0
   isPlayed: 1
 --- !u!114 &1767486368
 MonoBehaviour:
@@ -5196,7 +5199,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.11372549}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
