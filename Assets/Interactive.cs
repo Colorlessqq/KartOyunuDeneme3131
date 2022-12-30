@@ -15,7 +15,8 @@ public class Interactive : MonoBehaviour, IDropHandler,IPointerEnterHandler,IPoi
     [SerializeField] public TextMeshProUGUI cost;
     [SerializeField] TextMeshProUGUI ammunation;
     [SerializeField] Image image;
-    [SerializeField] string range;
+    [SerializeField] public int range;
+    public int CardLine = -10;
     public bool isPlayed = false;
     StateManager stateManager;
     public void OnDrop(PointerEventData eventData)
@@ -23,27 +24,24 @@ public class Interactive : MonoBehaviour, IDropHandler,IPointerEnterHandler,IPoi
 
         // Eğer tur senin değilse sonlandır
         if (!stateManager.isPlayerTurn) { return; }
-
+        print("segment 0");
         Interactive dropeed = eventData.pointerDrag.gameObject.GetComponent<Interactive>();
         if (dropeed.tag != this.tag && dropeed.isPlayed && isPlayed)
         {
-
-            TextMeshProUGUI damage = dropeed.attack;
-            health.text = (int.Parse(health.text) - int.Parse(damage.text)).ToString();
-            stateManager.Attack(dropeed);
-
-            if (int.Parse(health.text) < 1)
+            print("segment 1");
+            if (stateManager.Attack(dropeed))
             {
-                Destroy(this.gameObject);
+                print("segment 2");
+                TextMeshProUGUI damage = dropeed.attack;
+                health.text = (int.Parse(health.text) - int.Parse(damage.text)).ToString();
+                if (int.Parse(health.text) < 1)
+                {
+                    Destroy(this.gameObject);
+                }
             }
 
-        }
-        else
-        {
-            print("Aynı taraf");
-        }
 
-        
+        }       
     }
 
     [System.Obsolete]

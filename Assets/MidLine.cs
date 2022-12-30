@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -8,6 +9,7 @@ public class MidLine : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoint
     // Start is called before the first frame update
     public Transform playerLine1;
     public Transform playerLine2;
+    [SerializeField] TextMeshProUGUI ammunation;
     int maxCard = 5;
     StateManager stateManager;
     string Ownerside;
@@ -43,9 +45,9 @@ public class MidLine : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoint
           return; 
         }
 
-        //Interactive inter = eventData.pointerDrag.gameObject.GetComponent<Interactive>();
-        //ammunation.text = (int.Parse(ammunation.text) - int.Parse(inter.cost.text)).ToString();
-
+        Interactive inter = eventData.pointerDrag.gameObject.GetComponent<Interactive>();
+        if (!stateManager.MoveCard(inter)) { return; }
+        inter.CardLine = 0;
         d.original_parent = this.transform;
 
 

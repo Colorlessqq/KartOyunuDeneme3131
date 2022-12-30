@@ -22,18 +22,22 @@ public class StateManager : MonoBehaviour
         //playerGold.text = (int.Parse(playerGold.text) + 4).ToString();
     }
 
-    public void Attack(Interactive attacker)
+    public bool Attack(Interactive attacker)
     {
+        if (attacker.range + attacker.CardLine <= 0) { print("menzil yetersiz"); return false; }
+        if (attacker.CompareTag("Enemy")) { return true; }
         if (int.Parse(playerGold.text) < int.Parse(attacker.cost.text)) 
         {
             //TODO : Saldırmak için yeterli cephane yok uyarısı
-            return;
+            print("cephane yetersiz");
+            return false;
         }
         playerGold.text = (int.Parse(playerGold.text) - int.Parse(attacker.cost.text)).ToString();
+        return true;
     }
 
-
-    public void PlayCard(Interactive playedCard)
+    
+    public bool PlayCard(Interactive playedCard)
     {
         if (isPlayerTurn && !playedCard.isPlayed)
         {
@@ -43,12 +47,22 @@ public class StateManager : MonoBehaviour
                 if (int.Parse(playerGold.text) < int.Parse(playedCard.cost.text))
                 {
                     //TODO : Hareket etmek için yeterli cephane yok uyarısı
-                    return;
+                    return false;
                 }
                 playedCard.isPlayed= true;
                 playerGold.text = (int.Parse(playerGold.text) - int.Parse(playedCard.cost.text)).ToString();
+                return true;
             }
         }
+        return false;
+    }
+    public bool MoveCard(Interactive movedCard)
+    {
+        if (movedCard.tag == "Enemy") { return true; }
+        if (int.Parse(playerGold.text) < int.Parse(movedCard.cost.text)) { return false; }
+        playerGold.text = (int.Parse(playerGold.text) - int.Parse(movedCard.cost.text)).ToString();
+        return true;
+
     }
 
     private void Start()

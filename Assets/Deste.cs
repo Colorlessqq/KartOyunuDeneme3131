@@ -6,11 +6,11 @@ using UnityEngine.UIElements;
 
 public class Deste : MonoBehaviour
 {
-    bool isEnemyDeck;
-    [SerializeField]
-    List<GameObject> myDeck;
-    [SerializeField]
-    private GameObject spawnLine;
+    [SerializeField] bool isEnemyDeck;
+
+    [SerializeField] List<GameObject> myDeck;
+
+    [SerializeField] private GameObject spawnLine;
     StateManager stateManager;
 
     public void ReturnCardToHand()
