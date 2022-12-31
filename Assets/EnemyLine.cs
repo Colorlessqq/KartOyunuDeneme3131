@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -7,18 +7,36 @@ using UnityEngine.UI;
 
 public class EnemyLine : MonoBehaviour, IDropHandler
 {
-    [SerializeField]
-    //TextMeshProUGUI text;
+    private int maxCard = 3;
+    StateManager stateManager;
+
     public void OnDrop(PointerEventData eventData)
     {
-        //text.text = "Here is enemy line";
         if (eventData.pointerDrag.tag != "Enemy") { return; }
         Interactive inter = eventData.pointerDrag.GetComponent<Interactive>();
-        inter.isPlayed = true;
-        Draggable d = eventData.pointerDrag.GetComponent<Draggable>();
-        d.original_parent = this.transform;
-        inter.CardLine = -1;
-        
+        DropCardEnemyLine(inter);
+
+    }
+    public void DropCardEnemyLine(Interactive inter) 
+    {
+       
+        if (this.gameObject.transform.childCount >= maxCard) { return; }
+
+        //Kartın ücretinin oynamasına engel olup olmadığını kontrol eder
+        if (inter.isPlayed == false)
+        {
+            if (!stateManager.PlayEnemyCard(inter)) { return; }
+            inter.isPlayed = true;
+        }
+        inter.CardLine = 0;
+        inter.transform.parent = this.transform;
     }
 
+
+
+
+    private void Start()
+    {
+        stateManager = FindObjectOfType<StateManager>();
+    }
 }
