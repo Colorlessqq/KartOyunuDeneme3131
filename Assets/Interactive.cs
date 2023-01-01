@@ -19,21 +19,19 @@ public class Interactive : MonoBehaviour, IDropHandler,IPointerEnterHandler,IPoi
     public int CardLine = -10;
     public bool isPlayed = false;
     StateManager stateManager;
-    public bool weNeedAnimation = false;
     public void OnDrop(PointerEventData eventData)
     {
+
         // Eğer tur senin değilse sonlandır
         if (!stateManager.isPlayerTurn) { return; }
+        print("segment 0");
         Interactive dropeed = eventData.pointerDrag.gameObject.GetComponent<Interactive>();
-        CardAttacked(dropeed);
-    }
-    public void CardAttacked(Interactive dropeed)
-    {
-        
         if (dropeed.tag != this.tag && dropeed.isPlayed && isPlayed)
         {
-            if (stateManager.Attack(dropeed, this.GetComponent<Interactive>()))
+            print("segment 1");
+            if (stateManager.Attack(dropeed))
             {
+                print("segment 2");
                 TextMeshProUGUI damage = dropeed.attack;
                 health.text = (int.Parse(health.text) - int.Parse(damage.text)).ToString();
                 if (int.Parse(health.text) < 1)
@@ -41,7 +39,9 @@ public class Interactive : MonoBehaviour, IDropHandler,IPointerEnterHandler,IPoi
                     Destroy(this.gameObject);
                 }
             }
-        }
+
+
+        }       
     }
 
     [System.Obsolete]
@@ -80,15 +80,6 @@ public class Interactive : MonoBehaviour, IDropHandler,IPointerEnterHandler,IPoi
     {
         stateManager = FindObjectOfType<StateManager>();
     }
-
-    //private void Update()
-    //{
-    //    if (weNeedAnimation)
-    //    {
-
-    //        Vector3.SmoothDamp(this.transform.position, enemyLine.transform.position, ref velecotiy, 2);
-    //    }
-    //}
 
 
 }

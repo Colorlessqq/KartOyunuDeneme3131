@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class MidLine : MonoBehaviour, IDropHandler
+public class MidLine : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerExitHandler
 {
     // Start is called before the first frame update
     public Transform playerLine1;
@@ -21,14 +21,17 @@ public class MidLine : MonoBehaviour, IDropHandler
             Ownerside = gameObject.transform.GetChild(0).tag;
         }
         
-      
+        // Eğer tur senin değilse sonlandır
+        if (!stateManager.isPlayerTurn) { return; }
+
+        
         if (this.gameObject.transform.childCount >= maxCard) { print("maxium card"); return; }
 
         Draggable d = eventData.pointerDrag.GetComponent<Draggable>();
 
         if (d.gameObject.tag != Ownerside && Ownerside != "None")
         {
-            stateManager.Announce("Düşman varkan ilerleyemezsiniz");
+            //TODO : Bu saf düşman tarafından kontrol ediliyor duyurusu     
             return;
         }
         if (d.lastParent == transform)
@@ -37,33 +40,31 @@ public class MidLine : MonoBehaviour, IDropHandler
             return;
         }
 
-        //if  (d.gameObject.CompareTag("Player") && (d.original_parent.transform  != playerLine1.transform && d.original_parent.transform != playerLine2.transform))
-        //{
-        //  return; 
-        //}
+        if  (d.gameObject.CompareTag("Player") && (d.original_parent.transform  != playerLine1.transform && d.original_parent.transform != playerLine2.transform))
+        {
+          return; 
+        }
 
         Interactive inter = eventData.pointerDrag.gameObject.GetComponent<Interactive>();
         if (!stateManager.MoveCard(inter)) { return; }
-        inter.CardLine = 1;
+        inter.CardLine = 0;
         d.original_parent = this.transform;
+
+
+
     }
-    public bool MoveCardToMidLine(Interactive inter)
+    public void OnPointerEnter(PointerEventData eventData)
     {
-        if (inter.gameObject.tag != Ownerside && Ownerside != "None")
-        {
-            print("ben aga");
-            return false;
-        }
-        if (this.gameObject.transform.childCount >= maxCard) { print("maxium card"); print("ben aga aga"); return false; }
-        inter.CardLine = 1;
-        inter.transform.SetParent(this.transform);
-        return true;
+        //print("OnPointerEnter");
+
     }
 
-
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        //print(" OnPointerExit");
+    }
     private void Start()
     {
-        Ownerside= "None";
         stateManager = FindObjectOfType<StateManager>();
     }
 }

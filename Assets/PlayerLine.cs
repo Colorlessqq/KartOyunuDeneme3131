@@ -12,11 +12,8 @@ public class PlayerLine : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPo
     StateManager stateManager;
     public void OnDrop(PointerEventData eventData)
     {
-        if (!stateManager.isPlayerTurn) { return; }
         Draggable d = eventData.pointerDrag.GetComponent<Draggable>();
         Interactive inter = eventData.pointerDrag.gameObject.GetComponent<Interactive>();
-
-        //Eğer kartın safı değişmedi ise sonlandır
         if (d.lastParent == transform)
         {
             d.original_parent = this.transform;
@@ -24,6 +21,7 @@ public class PlayerLine : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPo
         }
         if (!d.gameObject.CompareTag("Player")) { return; }
         // Eğer tur senin değilse sonlandır
+        if (!stateManager.isPlayerTurn) { return; }
 
         // Eğer safta yetirnce kart varsa yeni kart atılmasını engeller
         if (this.gameObject.transform.childCount >= maxCard) { print("maxium card"); return; }
@@ -38,10 +36,10 @@ public class PlayerLine : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPo
         {
             if (!stateManager.MoveCard(inter)) { return; } 
         }
-       
+        //Eğer aynı hizade kalmışsın bir şey yapma
 
         //Her şey doğru ise kartın yerini değiştirir
-        inter.CardLine = 0;
+        inter.CardLine = -1;
         d.original_parent = this.transform;
 
 
