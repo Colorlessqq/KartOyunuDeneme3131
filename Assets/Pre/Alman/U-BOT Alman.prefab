@@ -349,7 +349,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lastParent: {fileID: 0}
   original_parent: {fileID: 0}
-  CardLine: -10
 --- !u!114 &714864179
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -368,6 +367,7 @@ MonoBehaviour:
   ammunation: {fileID: 0}
   image: {fileID: 2543934778217609995}
   range: 1
+  CardLine: -10
   isPlayed: 0
 --- !u!1 &969988379907426826
 GameObject:

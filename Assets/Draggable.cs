@@ -15,9 +15,9 @@ public class Draggable : MonoBehaviour,IBeginDragHandler, IEndDragHandler,IDragH
     public void OnBeginDrag(PointerEventData eventData)
     {
         // Eğer tur senin değilse sonlandır
-        if (!stateManager.isPlayerTurn){ return; }
+        if (!stateManager.isPlayerTurn && eventData.pointerDrag.CompareTag("Player")){ return; }
+
         lastParent = transform.parent;
-        print("OnBeginDrag");
         GetComponent<CanvasGroup>().blocksRaycasts = false;
         original_parent = this.transform.parent;
 
@@ -40,7 +40,7 @@ public class Draggable : MonoBehaviour,IBeginDragHandler, IEndDragHandler,IDragH
     public void OnDrag(PointerEventData eventData)
     {
         // Eğer tur senin değilse sonlandır
-        if (!stateManager.isPlayerTurn){ return; }
+        if (!stateManager.isPlayerTurn && eventData.pointerDrag.CompareTag("Player")) { return; }
 
 
         this.transform.position = eventData.position;
@@ -49,7 +49,7 @@ public class Draggable : MonoBehaviour,IBeginDragHandler, IEndDragHandler,IDragH
     public void OnEndDrag(PointerEventData eventData)
     {
         // Eğer tur senin değilse sonlandır
-        if (!stateManager.isPlayerTurn){ return; }
+        if (!stateManager.isPlayerTurn && eventData.pointerDrag.CompareTag("Player")) { return; }
 
 
         this.transform.SetParent(original_parent);
