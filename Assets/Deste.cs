@@ -15,13 +15,9 @@ public class Deste : MonoBehaviour
 
     public void ReturnCardToHand()
     {
+
         // Eğer tur senin değilse sonlandır
         if (!stateManager.isPlayerTurn) { return; }
-        if (myDeck.Count <= 0) 
-        {
-            stateManager.Announce("Destenizde kart kalmadı"); 
-            return;
-        }
         int x = Random.Range(0, myDeck.Count);
         GameObject newCard = Instantiate(myDeck[x]);
         myDeck.RemoveAt(x);
@@ -31,13 +27,12 @@ public class Deste : MonoBehaviour
     }
     public void ReturnCardToEnemeyHand()
     {
-        if (myDeck.Count <= 0) { return; }
+
         int x = Random.Range(0, myDeck.Count);
         GameObject newCard = Instantiate(myDeck[x]);
         myDeck.RemoveAt(x);
         newCard.transform.SetParent(spawnLine.transform);
         newCard.tag = "Enemy";
-        
 
     }
     private void Start()
